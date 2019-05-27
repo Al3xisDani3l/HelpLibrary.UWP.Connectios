@@ -139,6 +139,15 @@
       <Version>4.5.0</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HelpLibraryWindowsLibrary.Elements\HelpLibrary.UWP.Elements.csproj">
+      <Project>{39805f48-9c71-4a9a-86a5-b5954cb260d2}</Project>
+      <Name>HelpLibrary.UWP.Elements</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="codigo.txt" />
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

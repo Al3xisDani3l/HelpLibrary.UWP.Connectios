@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
-
+using HelpLibrary.UWP.Elements;
 namespace HelpLibrary.UWP.Connections.Data.Static
 {
     public static class Extencions
@@ -37,7 +37,8 @@ namespace HelpLibrary.UWP.Connections.Data.Static
 
             foreach (PropertyInfo item in dateable.Propiedades)
             {
-                var attrib = item.GetCustomAttribute<PropertyAttribute>();
+                var attrib = item.GetCustomAttribute<PositionAttribute>();
+                var atr = item.GetCustomAttribute<PropertyAttribute>();
                 if (attrib != null)
                 {
 
@@ -46,7 +47,7 @@ namespace HelpLibrary.UWP.Connections.Data.Static
                 }
                 else
                 {
-                    if (attrib.AddToExcel)
+                    if (atr.AddToExcel)
                     {
                         buffer[attrib.StringPosition] = item.GetValue(dateable);
                     }
